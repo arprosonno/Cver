@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CV Generator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Instructions Page -->
+  <div id="instructionsPage" class="screen">
+    <div class="centered-box">
+      <h1>Welcome to the CV Generator</h1>
+      <p>This tool helps you create a professional CV in a few steps:</p>
+      <ul>
+        <li>Fill out all your personal and professional details.</li>
+        <li>For sections like Education, Skills, Experience, etc., please use <strong>comma-separated values</strong>.</li>
+        <li><em>Example:</em> B.Sc in CSE, M.Sc in CSE</li>
+        <li>Upload your photo and signature.</li>
+        <li>Click "Generate CV" to preview your document.</li>
+        <li>You can download the CV as a PDF once it is generated.</li>
+      </ul>
+      <button id="startBtn">Start Generating CV</button>
+    </div>
+  </div>
+
+  <!-- Main Form -->
+  <div id="formPage" style="display:none;">
+    <form id="cvForm">
+      <input type="text" name="name" placeholder="Full Name" required />
+      <input type="text" name="designation" placeholder="Designation" required />
+      <input type="text" name="phone" placeholder="Phone" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <input type="text" name="address" placeholder="Address" required />
+      <input type="text" name="education" placeholder="Education (comma separated)" />
+      <input type="text" name="skills" placeholder="Skills (comma separated)" />
+      <input type="text" name="experience" placeholder="Experience (comma separated)" />
+      <input type="text" name="projects" placeholder="Projects (comma separated)" />
+      <input type="text" name="language" placeholder="Languages (comma separated)" />
+      <input type="text" name="affiliations" placeholder="Affiliations (comma separated)" />
+      <input type="text" name="references" placeholder="References (comma separated)" />
+      <input type="text" name="personal" placeholder="Personal Info (comma separated)" />
+      <input type="text" name="hobby" placeholder="Hobbies (comma separated)" />
+      <input type="text" name="awards" placeholder="Awards (comma separated)" />
+
+      <label>Upload Photo:</label>
+      <input type="file" name="photo" accept="image/*" required />
+      <label>Upload Signature:</label>
+      <input type="file" name="signature" accept="image/*" required />
+      <label>Select Date:</label>
+      <input type="date" name="date" required />
+
+      <button type="submit">Generate CV</button>
+    </form>
+
+    <button id="downloadBtn" style="display:none;">Download as PDF</button>
+    <div id="output" style="display:none;"></div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
